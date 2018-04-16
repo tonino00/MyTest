@@ -19,6 +19,17 @@
 						<div class="card-body">
 							<h4 class="card-title">Login</h4>
 
+							<% if(validacao.length > 0){ %>
+								<div class="alert alert-danger">
+									<strong>Atenção!</strong>
+									<ul>
+										<% for(var i = 0; i < validacao.length; i++) {%>
+											<li><%=validacao[i].msg%></li>
+										<% } %>
+									</ul>
+								</div>
+							<% } %>
+
 							<form action="/autenticar" method="post">
 							 
 								<div class="form-group">
