@@ -15,6 +15,9 @@ module.exports.cadastrar = function(application, req, res){
     if(erros){
         res.render('cadastro', {validacao: erros, dadosForm: dadosForm});
         return;
+    } else {
+        
+        res.render('ativacao');
     }
 
     var connection = application.config.dbConnection;
@@ -22,5 +25,5 @@ module.exports.cadastrar = function(application, req, res){
 
     UsuariosDAO.inserirUsuario(dadosForm);
 
-    res.send('podemos cadastrar')
+    // res.send('podemos cadastrar')
 }
