@@ -21,7 +21,7 @@ UsuariosDAO.prototype.autenticar = function(usuario, req, res){
 
 					req.session.autorizado = true;
 
-					req.session.email = result[0].email;
+					req.session.usuario = result[0].usuario;
 					req.session.senha = result[0].senha;
 				}
 
