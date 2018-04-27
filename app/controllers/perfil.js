@@ -3,7 +3,7 @@ module.exports.perfil = function(application, req, res){
 	if(req.session.autorizado){
 		res.render("perfil");
 	} else {
-		res.send('Usuário precisa fazer login');
+		res.render("index");
 	}
 }
 

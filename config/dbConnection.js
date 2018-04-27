@@ -6,8 +6,8 @@ var connMongoDB = function(){
     var db = new mongo.Db(
         'teste',
         new mongo.Server(
-            'mongodb://admin:123mudar@ds249787.mlab.com', // string contendo o endereço do servidor
-            49787, // porta de conexão
+            'localhost', // string contendo o endereço do servidor
+            27017, // porta de conexão
             {}
         ),
         {}
@@ -19,7 +19,3 @@ var connMongoDB = function(){
 module.exports = function(){
     return connMongoDB;
 }
-
-
-
-
