@@ -6,7 +6,7 @@ module.exports.autenticar = function(application, req, res){
 	
 	var dadosForm = req.body;
 
-	req.assert('email', 'Email não de ser vazio').notEmpty();
+	req.assert('usuario', 'Email não de ser vazio').notEmpty();
 	req.assert('senha', 'Senha não de ser vazia').notEmpty();
 
 	var erros = req.validationErrors();

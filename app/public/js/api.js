@@ -1,9 +1,11 @@
 $(document).ready(function() {
     $.ajax({
-        url: "mongodb://admin:123mudar@ds127436.mlab.com:27436/locadados/usuarios",
+    	  type: "GET",
+   			dataType: "json",
+        url: "http://localhost:27017/mytest/usuarios",
     }).then(function(data) {
-       $('.featurette-heading').append(data.nome);
-       $('.email-content').append(data.job);
-       $('.job-content').append(data.email);
+       $('.featurette-heading').append(data.usuario);
+       $('.email-content').append(data.senha);
+       // $('.job-content').append(data.email);
     });
 });
