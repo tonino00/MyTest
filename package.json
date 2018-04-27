@@ -9,8 +9,10 @@
   "author": "Antonino C.Gama",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^2.0.1",
     "body-parser": "^1.15.2",
     "consign": "^0.1.2",
+    "crypto": "^1.0.1",
     "ejs": "^2.5.2",
     "express": "^4.14.0",
     "express-session": "^1.15.3",

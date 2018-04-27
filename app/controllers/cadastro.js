@@ -1,12 +1,16 @@
+var crypto = require('crypto');
+
 module.exports.cadastro = function (application, req, res){
     res.render('cadastro', {validacao: {}, dadosForm: {}});
 }
 
 module.exports.cadastrar = function(application, req, res){
 
+
+        
+
     var dadosForm = req.body;
-    // req.assert('nome',  'Nome não pode ser vazio').notEmpty();
-    // req.assert('job',   'Profissão não pode ser vazio').notEmpty();
+
     req.assert('email', 'Email não pode ser vazio').notEmpty();
     req.assert('senha', 'Senha não pode ser vazio').notEmpty();
 
