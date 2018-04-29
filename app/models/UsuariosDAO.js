@@ -30,8 +30,6 @@ UsuariosDAO.prototype.inserirUsuario = function(usuario){
 			transporter.sendMail(mailOptions, function(error, info){
 			  if (error) {
 			    console.log(error);
-			  } else {
-			    console.log('Email de enviado : ' + info.response);
 			  }
 			});
 
