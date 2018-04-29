@@ -11,6 +11,7 @@ module.exports.cadastrar = function(application, req, res){
 
     var dadosForm = req.body;
 
+    req.assert('nome',  'nome não pode ser vazio').notEmpty()
     req.assert('email', 'Email não pode ser vazio').notEmpty();
     req.assert('senha', 'Senha não pode ser vazio').notEmpty();
 
