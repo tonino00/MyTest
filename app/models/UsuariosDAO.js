@@ -25,7 +25,6 @@ UsuariosDAO.prototype.inserirUsuario = function(usuario){
 			  to: usuario.email,
 			  subject: 'Email de confirmação de cadastro',
 			  text: 'Obrigado por se cadastrar na locadados!',
-			  html: "<b>LocaDados ✔</b>" 
 			};
 
 			transporter.sendMail(mailOptions, function(error, info){
