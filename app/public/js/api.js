@@ -2,7 +2,7 @@
 $(document).ready(function() {
 	function loading_post(){
 		var xhr = new XMLHttpRequest();
-		xhr.open("GET", "http://localhost:27017/teste");
+		xhr.open("GET", "http://localhost:27017/teste/usuarios");
 
 		xhr.onload = function(){
 			if(xhr.status === 200) {
@@ -21,5 +21,7 @@ $(document).ready(function() {
 				}
 			}
 		}
+
+		xhr.send();
 	}
 });
