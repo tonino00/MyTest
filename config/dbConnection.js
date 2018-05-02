@@ -1,20 +1,21 @@
-var MongoClient = require('mongodb').MongoClient
-    , assert = require('assert');
-var connMongoDB = function () {
- 
- // Connection URL
- var url = 'mongodb://admin:123mudar@ds249787.mlab.com:49787/teste';
- 
- // Use connect method to connect to the Server
- MongoClient.connect(url, {
-  poolSize: 10, ssl: true
-}, function(err, db) {
-  assert.equal(null, err);
-  console.log("Connected correctly to server");
+/* importar o mongodb */
+var mongo = require('mongodb');
 
-  db.close();
- });
+var connMongoDB = function(){
+    console.log('Entrou na função de conexão');
+    var db = new mongo.Db(
+        'teste',
+        new mongo.Server(
+            'localhost', // string contendo o endereço do servidor
+            27017, // porta de conexão
+            {}
+        ),
+        {}
+    );
+
+    return db;
 }
-module.exports = function () {
+
+module.exports = function(){
     return connMongoDB;
 }
