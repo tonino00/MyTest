@@ -2,7 +2,7 @@
 $(document).ready(function() {
 	function loading_post(){
 		var xhr = new XMLHttpRequest();
-		xhr.open("GET", "http://localhost:27017/teste/usuarios");
+		xhr.open("GET", "http://localhost:8080/api");
 
 		xhr.onload = function(){
 			if(xhr.status === 200) {
@@ -11,7 +11,7 @@ $(document).ready(function() {
 					$('#container_timeline').append(
 						'<container>'+
 							'<h2>'+
-								data[i].usuario.nome+
+							 data[i].titulo+
 							'</h2>'+
 							'<p>'+
 								data[i].usuario.email+ 
@@ -21,7 +21,5 @@ $(document).ready(function() {
 				}
 			}
 		}
-
-		xhr.send();
 	}
 });
