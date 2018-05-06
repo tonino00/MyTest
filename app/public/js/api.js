@@ -2,7 +2,7 @@
 $(document).ready(function() {
 	function loading_post(){
 		var xhr = new XMLHttpRequest();
-		xhr.open("GET", "http://localhost:8080/api");
+		xhr.open("GET", "mongodb://admin:123mudar@ds249787.mlab.com:49787/teste/usuarios");
 
 		xhr.onload = function(){
 			if(xhr.status === 200) {
@@ -11,10 +11,10 @@ $(document).ready(function() {
 					$('#container_timeline').append(
 						'<container>'+
 							'<h2>'+
-							 data[i].titulo+
+							 data[i].nome+
 							'</h2>'+
 							'<p>'+
-								data[i].usuario.email+ 
+								data[i].email+ 
 							'</p>'+
 						'</container>'
 					);
