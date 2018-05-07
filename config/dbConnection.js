@@ -1,3 +1,4 @@
+
 var mongo = require("mongodb").MongoClient;
 var assert = require("assert");
 
@@ -25,6 +26,21 @@ function query(db, dados) {
 
         }
     }
+
+
+    function buscar(db, dados) {
+        var collection = db.collection(dados.collection);
+        switch (dados.operacao) {
+            case "buscar":
+            collection.find(dados.usuario,dados.callback).toArray(); 
+                break;
+            default:
+                break;
+
+            }
+        }
+
+
 
 module.exports = function(){
     return connMongoDB;
