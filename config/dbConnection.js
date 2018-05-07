@@ -28,11 +28,12 @@ function query(db, dados) {
     }
 
 
-    function buscar(db, dados) {
+
+    function query(db, dados) {
         var collection = db.collection(dados.collection);
         switch (dados.operacao) {
             case "buscar":
-            collection.find(dados.usuario,dados.callback).toArray(); 
+            collection.find(dados.usuario,dados, dados.callback); 
                 break;
             default:
                 break;
