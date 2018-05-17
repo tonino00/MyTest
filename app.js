@@ -2,6 +2,6 @@
 var app = require('./config/server');
 
 /* parametrizar a porta de escuta */
-app.listen(3001, function(){
+app.listen('https://locadados.herokuapp.com/', function(){
 	console.log('Servidor online');
 })
