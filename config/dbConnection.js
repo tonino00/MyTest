@@ -21,24 +21,14 @@ function query(db, dados) {
         case "inserir":
         collection.insertOne(dados.usuario, dados.callback); 
             break;
+        case "buscar":
+        collection.find(dados.usuario).toArray(dados.callback); 
+            break;
         default:
             break;
 
         }
     }
-
-
-    function procurar(db, dados) {
-        var collection = db.collection(dados.collection);
-        switch (dados.operacao) {
-            case "buscar":
-            collection.find(dados.usuario,dados, dados.callback).toArray(); 
-                break;
-            default:
-                break;
-
-            }
-        }
 
 
 

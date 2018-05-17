@@ -50,12 +50,12 @@ UsuariosDAO.prototype.autenticar = function(usuario, req, res){
 		usuario:usuario,
 		collection: "usuarios",
 		callback: function(err, result) {
-			if(result != undefined){
+			if(result[0] != undefined){
 
 				req.session.autorizado = true;
 
-				req.session.email = result.email;
-				req.session.senha = result.senha;
+				req.session.email =  result[0].email;
+				req.session.senha =  result[0].senha;
 			}
 
 			if(req.session.autorizado){
