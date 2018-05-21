@@ -16,6 +16,29 @@ UsuariosDAO.prototype.inserirUsuario = function(usuario, res) {
 		}
 	};
 
+var transporter = nodemailer.createTransport({
+		service:'Gmail',
+		auth: {
+			user:'myteste2018@gmail.com',
+			pass:'Locadados2018'
+		}
+	});
+
+	var mailOptions = {
+		from: 'contato@locadados.com.br',
+		to: usuario.email,
+		subject: 'Email de confirmação',
+		text: 'Obrigado por se cadastrar!'
+	};
+
+	transporter.sendMail(mailOptions, function(error, info){
+		if (error) {
+		console.log(error);
+		} else {
+		console.log('Email de enviado : ' + info.response);
+		}
+	});
+
 	var password_Hash = crypto.createHash("md5").update(usuario.senha).digest("hex");
 	usuario.senha = password_Hash;
 	
