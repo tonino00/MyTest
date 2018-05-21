@@ -19,13 +19,13 @@ UsuariosDAO.prototype.inserirUsuario = function(usuario, res) {
 var transporter = nodemailer.createTransport({
 		service:'Gmail',
 		auth: {
-			user:'myteste2018@gmail.com',
-			pass:'Locadados2018'
+			user:'youremail',
+			pass:'yourpassword'
 		}
 	});
 
 	var mailOptions = {
-		from: 'contato@locadados.com.br',
+		from: 'youremail',
 		to: usuario.email,
 		subject: 'Email de confirmação',
 		text: 'Obrigado por se cadastrar!'

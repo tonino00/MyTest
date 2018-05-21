@@ -2,7 +2,7 @@
 var mongo = require("mongodb").MongoClient;
 var assert = require("assert");
 
-const url = "mongodb://admin:123mudar@ds249787.mlab.com:49787/teste";
+const url = "mongodb://user:yourpassword@ds249787.mlab.com:49787/teste";
 const dbName = "teste";
 
 var connMongoDB = function(dados) {
